@@ -1,0 +1,306 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: white;
+  margin: 0.25em 0;
+  padding: 0;
+}
+
+hr {
+  margin: 4rem 15%;
+  background-color: #fe346e;
+  border: 1px solid #fe346e;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background-color: #0f0f0f;
+  font-family: "Fira Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  box-sizing: border-box;
+  margin-inline: 15%;
+  margin-block: 1rem;
+}
+
+.container h2 {
+  color: #ffbd69;
+}
+
+.sideCard {
+  display: flex;
+  width: 320px;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.mainCard {
+  display: flex;
+  width: 670px;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+header {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+  margin-inline: 15%;
+  padding-block: 4rem;
+}
+
+header #profile-img {
+  width: 320px;
+  height: 420px;
+  border-radius: 1rem;
+  object-fit: cover;
+  object-position: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+header #profile-info {
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: center;
+  height: 420px;
+}
+
+header #profile-info .firstname,
+header #profile-info .lastname {
+  font-size: 4.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
+
+header #profile-info .firstname small,
+header #profile-info .lastname small {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+header #profile-info .divider {
+  height: 0.25em;
+  background: #381460 linear-gradient(90deg, #fe346e 0%, #381460 100%);
+  margin-block: 1em;
+}
+
+header #profile-info .degree {
+  font-size: 1.5rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+header #profile-info .socialGroup {
+  margin-block-start: 0.25rem;
+}
+
+header #profile-info .socialGroup .socialIcon {
+  font-size: 2.5rem;
+  color: white;
+  margin-inline-end: 0.5rem;
+  border: 2px solid white;
+  border-radius: 0.15em;
+  padding: 0 0.4rem;
+  cursor: pointer;
+  transition: linear 0.35s;
+}
+
+header #profile-info .socialGroup .socialIcon:hover {
+  border: 2px solid #fe346e;
+  background-color: #fe346e;
+}
+
+header #profile-info .socialGroup .socialIcon:hover i {
+  animation: iconRotate 0.5s linear infinite alternate;
+}
+
+main > section.infoContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+  margin-inline: 15%;
+}
+
+main > section.infoContainer section.personalProfile {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.75s;
+  padding: 1em;
+}
+
+main > section.infoContainer section.skillSummary {
+  position: relative;
+  transition: all 1.5s;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  width: 670px;
+  padding: 1em;
+}
+
+main > section.infoContainer section.skillSummary .languages,
+main > section.infoContainer section.skillSummary .frameworks {
+  display: flex;
+  flex-direction: row;
+}
+
+main > section.infoContainer section.skillSummary .languages .iconContainer,
+main > section.infoContainer section.skillSummary .frameworks .iconContainer {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main > section.infoContainer section.skillSummary .languages .iconContainer .level,
+main > section.infoContainer section.skillSummary .frameworks .iconContainer .level {
+  color: #e0e0e0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+main > section.infoContainer section.skillSummary .languages .iconContainer .icon,
+main > section.infoContainer section.skillSummary .frameworks .iconContainer .icon {
+  width: 64px;
+  height: 64px;
+  object-position: center;
+  object-fit: contain;
+  padding: 0.5rem;
+}
+
+main > section.infoContainer section.skillSummary .languages .iconContainer #deno,
+main > section.infoContainer section.skillSummary .frameworks .iconContainer #deno {
+  filter: invert(1);
+}
+
+main > section.infoContainer .hidePersonal {
+  top: 1000px;
+  display: none;
+}
+
+main > section.infoContainer .hideSkill {
+  right: -100%;
+  display: none;
+}
+
+main > section.infoContainer .displayBtmToTop {
+  top: 0;
+  display: flex;
+}
+
+main > section.infoContainer .displayRightToLeft {
+  right: 0;
+  display: flex;
+}
+
+section.expContainer {
+  margin-block-end: 8rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+  transition: all 2s linear;
+}
+
+section.expContainer .experience {
+  flex-direction: column;
+}
+
+section.expContainer .education {
+  flex-direction: column;
+}
+
+section.expContainer ul {
+  list-style: none;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+section.expContainer ul li {
+  margin-block: 0.35rem;
+}
+
+section.expContainer ul li::before {
+  content: "\2022";
+  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #ffbd69;
+  /* Change the color */
+  display: inline-block;
+  /* Needed to add space between the bullet and the text */
+  width: 1em;
+  /* Also needed for space (tweak if needed) */
+  margin-left: -1em;
+  /* Also needed for space (tweak if needed) */
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+footer {
+  position: static;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  height: 3rem;
+  background-color: #381460;
+  margin-block-start: 1em;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #381460, 0 0 8px #381460, 0 0 10px #381460, 0 0 12px #381460, 0 0 14px #381460;
+  }
+  to {
+    box-shadow: 0 0 2px #fff, 0 0 4px #fe346e, 0 0 6px #fe346e, 0 0 8px #fe346e, 0 0 10px #fe346e, 0 0 12px #fe346e, 0 0 14px #fe346e;
+  }
+}
+
+@keyframes iconRotate {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    transform: scale(1.15) rotate(15deg);
+  }
+}
+
+@keyframes rotateColor {
+  0% {
+    filter: hue-rotate(0deg);
+    box-shadow: 0 0 2px black, 0 0 4px #fe346e, 0 0 6px #381460, 0 0 8px #381460, 0 0 10px #381460, 0 0 12px #381460, 0 0 14px #381460;
+  }
+  50% {
+    filter: hue-rotate(180deg);
+    box-shadow: 0 0 2px black, 0 0 4px #fe346e, 0 0 6px #fe346e, 0 0 8px #fe346e, 0 0 10px #fe346e, 0 0 12px #fe346e, 0 0 14px #fe346e;
+  }
+  100% {
+    filter: hue-rotate(360deg);
+    box-shadow: 0 0 2px #fe346e, 0 0 4px #fe346e, 0 0 6px #fe346e, 0 0 8px #fe346e, 0 0 10px #fe346e, 0 0 12px #fe346e, 0 0 14px #fe346e;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

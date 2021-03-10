@@ -260,6 +260,7 @@ footer {
   height: 3rem;
   background-color: #381460;
   margin-block-start: 1em;
+  color: white;
 }
 
 @keyframes glow {

@@ -52,17 +52,17 @@ body {
 }
 
 header {
-  min-height: 60vh;
+  height: $headerHeigth;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   box-sizing: border-box;
-  margin-inline: 15%;
-  padding-block: 4rem;
+  margin: 4rem 15%;
   #profile-img {
-    width: 320px;
-    height: $headerHeigth;
+    width: 100%;
+    height: 100%;
+    max-width: 320px;
     border-radius: $defaultBorderRaduis;
     object-fit: cover;
     object-position: center;
@@ -72,20 +72,14 @@ header {
     flex-direction: column;
     box-sizing: border-box;
     justify-content: center;
-    height: $headerHeigth;
+    color: white;
     .firstname,
     .lastname {
       font-size: 4.5rem;
       font-weight: bold;
       text-transform: uppercase;
-      color: white;
-      small {
-        font-size: 2rem;
-        font-weight: lighter;
-      }
     }
     .divider {
-      // width: 670px;
       height: 0.25em;
       background: $primaryColor
         linear-gradient(90deg, $accentColor 0%, $primaryColor 100%);
@@ -93,7 +87,6 @@ header {
     }
     .degree {
       font-size: 1.5rem;
-      color: white;
       text-transform: uppercase;
       font-weight: lighter;
     }
@@ -101,7 +94,6 @@ header {
       margin-block-start: 0.25rem;
       .socialIcon {
         font-size: 2.5rem;
-        color: white;
         margin-inline-end: 0.5rem;
         border: 2px solid white;
         border-radius: 0.15em;

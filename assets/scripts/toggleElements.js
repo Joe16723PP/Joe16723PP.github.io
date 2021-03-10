@@ -1,33 +1,44 @@
-const infoSection = document.querySelector('.infoContainer');
-const personalProfile = document.querySelector('.personalProfile');
-const skillContainer = document.querySelector('.skillSummary');
-const mainContainer = document.querySelector('main');
-const expContainer = document.querySelector('.expContainer');
+const infoSection = document.querySelector(".infoContainer");
+const personalProfile = document.querySelector(".personalProfile");
+const skillContainer = document.querySelector(".skillSummary");
+const mainContainer = document.querySelector("main");
+const expContainer = document.querySelector(".expContainer");
 const body = document.body;
-const DISPLAY_POSITION = 72; // y value of main container
+const DISPLAY_POSITION = 10; // y value of main container
 
-
+console.log(body.scrollHeight);
 
 const detectedScreen = (e) => {
-  // console.log(w);
   let currentPosition = window.scrollY;
   let isToggleSkillElement = currentPosition > DISPLAY_POSITION;
   let isToggleExpElement = currentPosition > 300;
-  if (isToggleSkillElement) {
+  onToggleElement(isToggleExpElement, isToggleSkillElement);
+};
+
+const onToggleElement = (toggleExp, toggleSkill) => {
+  if (toggleSkill) {
     // show element
-    personalProfile.className = 'sideCard personalProfile displayBtmToTop';
-    skillContainer.className = 'mainCard skillSummary displayRightToLeft';
+    personalProfile.className = "sideCard personalProfile displayBtmToTop";
+    skillContainer.className = "mainCard skillSummary displayRightToLeft";
   } else {
     // hide element
-    personalProfile.className = 'sideCard personalProfile hidePersonal';
-    skillContainer.className = 'mainCard skillSummary hideSkill';
+    personalProfile.className = "sideCard personalProfile hidePersonal";
+    skillContainer.className = "mainCard skillSummary hideSkill";
   }
-  
-  if (isToggleExpElement) {
-    expContainer.className = 'container expContainer show';
-  } else {
-    expContainer.className = 'container expContainer hide';
-  }
-}
 
-window.addEventListener('scroll', detectedScreen)
+  if (toggleExp) {
+    expContainer.className = "container expContainer show";
+  } else {
+    expContainer.className = "container expContainer hide";
+  }
+};
+
+window.addEventListener("scroll", detectedScreen);
+
+window.addEventListener("touchmove", (e) => {
+  let clientY = e.touches[0].clientY;
+  let currentPosition = clientY;
+  let isToggleSkillElement = currentPosition > 100;
+  let isToggleExpElement = currentPosition > 300;
+  onToggleElement(isToggleExpElement, isToggleSkillElement);
+});

@@ -51,19 +51,19 @@ body {
 }
 
 header {
-  min-height: 60vh;
+  height: 420px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   box-sizing: border-box;
-  margin-inline: 15%;
-  padding-block: 4rem;
+  margin: 4rem 15%;
 }
 
 header #profile-img {
-  width: 320px;
-  height: 420px;
+  width: 100%;
+  height: 100%;
+  max-width: 320px;
   border-radius: 1rem;
   object-fit: cover;
   object-position: center;
@@ -74,7 +74,7 @@ header #profile-info {
   flex-direction: column;
   box-sizing: border-box;
   justify-content: center;
-  height: 420px;
+  color: white;
 }
 
 header #profile-info .firstname,
@@ -82,13 +82,6 @@ header #profile-info .lastname {
   font-size: 4.5rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: white;
-}
-
-header #profile-info .firstname small,
-header #profile-info .lastname small {
-  font-size: 2rem;
-  font-weight: lighter;
 }
 
 header #profile-info .divider {
@@ -99,7 +92,6 @@ header #profile-info .divider {
 
 header #profile-info .degree {
   font-size: 1.5rem;
-  color: white;
   text-transform: uppercase;
   font-weight: lighter;
 }
@@ -110,7 +102,6 @@ header #profile-info .socialGroup {
 
 header #profile-info .socialGroup .socialIcon {
   font-size: 2.5rem;
-  color: white;
   margin-inline-end: 0.5rem;
   border: 2px solid white;
   border-radius: 0.15em;

@@ -6,8 +6,6 @@ const expContainer = document.querySelector(".expContainer");
 const body = document.body;
 const DISPLAY_POSITION = 10; // y value of main container
 
-console.log(body.scrollHeight);
-
 const detectedScreen = (e) => {
   let currentPosition = window.scrollY;
   let isToggleSkillElement = currentPosition > DISPLAY_POSITION;
@@ -33,12 +31,25 @@ const onToggleElement = (toggleExp, toggleSkill) => {
   }
 };
 
-window.addEventListener("scroll", detectedScreen);
+const mainToggleElement = () => {
+  isDesktop = body.clientWidth > 1200;
 
-window.addEventListener("touchmove", (e) => {
-  let clientY = e.touches[0].clientY;
-  let currentPosition = clientY;
-  let isToggleSkillElement = currentPosition > 100;
-  let isToggleExpElement = currentPosition > 300;
-  onToggleElement(isToggleExpElement, isToggleSkillElement);
-});
+  if (isDesktop) {
+    window.addEventListener("scroll", detectedScreen);
+
+    window.addEventListener("touchmove", (e) => {
+      let clientY = e.touches[0].clientY;
+      let currentPosition = clientY;
+      let isToggleSkillElement = currentPosition > 100;
+      let isToggleExpElement = currentPosition > 300;
+      onToggleElement(isToggleExpElement, isToggleSkillElement);
+    });
+  } else {
+    console.log("mobile");
+    personalProfile.className = "sideCard personalProfile";
+    skillContainer.className = "mainCard skillSummary";
+    expContainer.className = "container expContainer";
+  }
+};
+
+mainToggleElement();

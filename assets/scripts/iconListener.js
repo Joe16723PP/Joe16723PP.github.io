@@ -46,9 +46,9 @@ const addIconListener = () => {
   });
 };
 
-const main = () => {
+const mainIconListener = () => {
   createIcon();
   addIconListener();
 };
 
-main();
+mainIconListener();

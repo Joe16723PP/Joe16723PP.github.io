@@ -23,7 +23,6 @@ body {
   font-size: $fontSize;
   background-color: $backgroundColor;
   font-family: "Fira Sans", sans-serif;
-  // height: 250vh;
   overflow-x: hidden;
 }
 
@@ -282,5 +281,174 @@ footer {
     box-shadow: 0 0 2px $accentColor, 0 0 4px $accentColor, 0 0 6px $accentColor,
       0 0 8px $accentColor, 0 0 10px $accentColor, 0 0 12px $accentColor,
       0 0 14px $accentColor;
+  }
+}
+
+// responsive
+@media only screen and (max-width: 768px) {
+  html {
+    overflow-x: hidden;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+
+  hr {
+    margin: 1rem 5%;
+    background-color: $accentColor;
+    border: 1px solid $accentColor;
+  }
+  .container {
+    display: flex;
+    box-sizing: border-box;
+    margin-inline: 5%;
+    margin-block: 0.1rem;
+    h2 {
+      color: $warnColor;
+    }
+  }
+
+  .sideCard {
+    width: 100%;
+  }
+
+  .mainCard {
+    width: 100%;
+  }
+
+  header {
+    height: auto;
+    // background-color: white;
+    align-items: flex-start;
+    margin: 2rem;
+    #profile-img {
+      width: 128px;
+      height: 128px;
+    }
+    #profile-info {
+      flex-direction: column;
+      box-sizing: border-box;
+      justify-content: flex-start;
+      color: white;
+      .firstname,
+      .lastname {
+        font-size: 1.5rem;
+        font-weight: lighter;
+        text-transform: uppercase;
+      }
+      .divider {
+        height: 0.15em;
+        margin-block: 0.25rem;
+      }
+      .degree {
+        font-size: 0.75rem;
+      }
+      .socialGroup {
+        margin-block-start: 0;
+        .socialIcon {
+          font-size: 1.25rem;
+          margin-inline-end: 0.45rem;
+          border: none;
+          padding: 0;
+          transition: linear 0.35s;
+        }
+        .socialIcon:hover {
+          border: none;
+          background-color: transparent;
+          i {
+            animation: iconRotate 0.5s linear infinite alternate;
+          }
+        }
+      }
+    }
+  }
+
+  main > section.infoContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    margin-inline: 0;
+    section.personalProfile {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.75s;
+      padding-inline: 2em;
+    }
+
+    section.skillSummary {
+      position: relative;
+      transition: all 1.5s;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      justify-content: flex-start;
+      width: 100%;
+      padding: 2rem;
+      .languages,
+      .frameworks {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .iconContainer {
+          margin: 0rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .level {
+            color: #e0e0e0;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+          }
+          .icon {
+            width: 32px;
+            height: 32px;
+            object-position: center;
+            object-fit: contain;
+            padding: 0.5rem;
+          }
+          #deno {
+            filter: invert(1);
+          }
+        }
+      }
+    }
+  }
+
+  section.expContainer {
+    margin-block-end: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+    transition: none;
+
+    .experience {
+      flex-direction: column;
+    }
+
+    .education {
+      flex-direction: column;
+    }
+
+    ul {
+      list-style: none;
+      color: #e0e0e0;
+      margin: 0;
+      li {
+        margin-block: 0.35rem;
+      }
+      li::before {
+        content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+        color: $warnColor; /* Change the color */
+        display: inline-block; /* Needed to add space between the bullet and the text */
+        width: 1em; /* Also needed for space (tweak if needed) */
+        margin-left: -1.25em; /* Also needed for space (tweak if needed) */
+      }
+    }
   }
 }

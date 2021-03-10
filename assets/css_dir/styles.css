@@ -295,4 +295,170 @@ footer {
     box-shadow: 0 0 2px #fe346e, 0 0 4px #fe346e, 0 0 6px #fe346e, 0 0 8px #fe346e, 0 0 10px #fe346e, 0 0 12px #fe346e, 0 0 14px #fe346e;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  html {
+    overflow-x: hidden;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  hr {
+    margin: 1rem 5%;
+    background-color: #fe346e;
+    border: 1px solid #fe346e;
+  }
+  .container {
+    display: flex;
+    box-sizing: border-box;
+    margin-inline: 5%;
+    margin-block: 0.1rem;
+  }
+  .container h2 {
+    color: #ffbd69;
+  }
+  .sideCard {
+    width: 100%;
+  }
+  .mainCard {
+    width: 100%;
+  }
+  header {
+    height: auto;
+    align-items: flex-start;
+    margin: 2rem;
+  }
+  header #profile-img {
+    width: 128px;
+    height: 128px;
+  }
+  header #profile-info {
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    color: white;
+  }
+  header #profile-info .firstname,
+  header #profile-info .lastname {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    text-transform: uppercase;
+  }
+  header #profile-info .divider {
+    height: 0.15em;
+    margin-block: 0.25rem;
+  }
+  header #profile-info .degree {
+    font-size: 0.75rem;
+  }
+  header #profile-info .socialGroup {
+    margin-block-start: 0;
+  }
+  header #profile-info .socialGroup .socialIcon {
+    font-size: 1.25rem;
+    margin-inline-end: 0.45rem;
+    border: none;
+    padding: 0;
+    transition: linear 0.35s;
+  }
+  header #profile-info .socialGroup .socialIcon:hover {
+    border: none;
+    background-color: transparent;
+  }
+  header #profile-info .socialGroup .socialIcon:hover i {
+    animation: iconRotate 0.5s linear infinite alternate;
+  }
+  main > section.infoContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    margin-inline: 0;
+  }
+  main > section.infoContainer section.personalProfile {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.75s;
+    padding-inline: 2em;
+  }
+  main > section.infoContainer section.skillSummary {
+    position: relative;
+    transition: all 1.5s;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 2rem;
+  }
+  main > section.infoContainer section.skillSummary .languages,
+  main > section.infoContainer section.skillSummary .frameworks {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  main > section.infoContainer section.skillSummary .languages .iconContainer,
+  main > section.infoContainer section.skillSummary .frameworks .iconContainer {
+    margin: 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main > section.infoContainer section.skillSummary .languages .iconContainer .level,
+  main > section.infoContainer section.skillSummary .frameworks .iconContainer .level {
+    color: #e0e0e0;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+  }
+  main > section.infoContainer section.skillSummary .languages .iconContainer .icon,
+  main > section.infoContainer section.skillSummary .frameworks .iconContainer .icon {
+    width: 32px;
+    height: 32px;
+    object-position: center;
+    object-fit: contain;
+    padding: 0.5rem;
+  }
+  main > section.infoContainer section.skillSummary .languages .iconContainer #deno,
+  main > section.infoContainer section.skillSummary .frameworks .iconContainer #deno {
+    filter: invert(1);
+  }
+  section.expContainer {
+    margin-block-end: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+    transition: none;
+  }
+  section.expContainer .experience {
+    flex-direction: column;
+  }
+  section.expContainer .education {
+    flex-direction: column;
+  }
+  section.expContainer ul {
+    list-style: none;
+    color: #e0e0e0;
+    margin: 0;
+  }
+  section.expContainer ul li {
+    margin-block: 0.35rem;
+  }
+  section.expContainer ul li::before {
+    content: "\2022";
+    /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #ffbd69;
+    /* Change the color */
+    display: inline-block;
+    /* Needed to add space between the bullet and the text */
+    width: 1em;
+    /* Also needed for space (tweak if needed) */
+    margin-left: -1.25em;
+    /* Also needed for space (tweak if needed) */
+  }
+}
 /*# sourceMappingURL=styles.css.map */

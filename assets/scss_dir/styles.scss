@@ -124,6 +124,34 @@ main > section.infoContainer {
     position: relative;
     transition: all 0.75s;
     padding: 1em;
+
+    .moreContact {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      color: white;
+      span {
+        margin: 0.2rem 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        i {
+          font-size: 1.5rem;
+        }
+        // div.displayContact {
+        //   font-size: 1rem;
+        //   font-weight: lighter;
+        //   margin-inline-start: 0.75rem;
+        // }
+        a.displayContact {
+          margin-inline-start: 0.75rem;
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
   }
 
   section.skillSummary {
@@ -235,7 +263,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  position: static;
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
